@@ -28,14 +28,13 @@ Join our [Discord](https://discord.gg/h6kCZb72G7) server and follow our [Twitter
 # Install FastChat
 pip3 install fschat
 
-# Install a specific commit of huggingface/transformers
-# Our released weights do not work with commits after this due to some upstream changes in the tokenizer.
-pip3 install git+https://github.com/huggingface/transformers@c612628045822f909020f7eb6784c79700813eda
+# Install the latest main branch of huggingface/transformers
+pip3 install git+https://github.com/huggingface/transformers
 ```
 
 ### Method 2: From source
 
-1. Clone this repository and navigate to FastChat folder
+1. Clone this repository and navigate to the FastChat folder
 ```bash
 git clone https://github.com/lm-sys/FastChat.git
 cd FastChat
@@ -51,13 +50,16 @@ pip3 install -e .
 We release [Vicuna](https://vicuna.lmsys.org/) weights as delta weights to comply with the LLaMA model license.
 You can add our delta to the original LLaMA weights to obtain the Vicuna weights. Instructions:
 
+<<<<<<< HEAD
 1. Get the orignal LLaMA weights in the huggingface format by following the instructions [here](https://huggingface.co/docs/transformers/main/model_doc/llama).
+=======
+1. Get the original LLaMA weights in the huggingface format by following the instructions [here](https://huggingface.co/docs/transformers/main/model_doc/llama).
+>>>>>>> upstream/main
 2. Use the following scripts to get Vicuna weights by applying our delta. It will automatically download delta weights from our Hugging Face account.
 
 **NOTE**:
-Our released weights are only compatible with huggingface/transformers commit: `c612628045822f909020f7eb6784c79700813eda`.
-The weights do not work with commits after this due to some upstream changes in the tokenizer. We install the correct version of
-transformers when fastchat is installed.
+Our released weights are only compatible with the latest main branch of huggingface/transformers.
+We install the correct version of transformers when fastchat is installed.
 
 ### Vicuna-13B
 This conversion command needs around 60 GB of CPU RAM.
